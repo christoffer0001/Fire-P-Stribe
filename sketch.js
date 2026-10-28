@@ -1,8 +1,12 @@
+let ui;
 function setup() {
-  createCanvas(400, 400);
+  ui=new UI(width, height);
+
+  createCanvas(1280,720);
 }
 
 function draw() {
-  background(300);
+  background(200);
 
+  ui.drawBoard();
 }
