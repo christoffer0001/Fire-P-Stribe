@@ -1,18 +1,22 @@
-
 let Board=
 [[0,0,0,0,0,0,0]
 ,[0,0,0,0,0,0,0]
 ,[0,0,0,0,0,0,0]
 ,[0,0,0,0,0,0,0]
 ,[0,0,0,0,0,0,0]
-,[0,0,0,0,0,0,0]]
+,[0,0,0,0,0,0,0]];
+
+let ui, check;
 
 
 function setup() {
-  createCanvas(400, 400);
-  let check = new Checking();
+  createCanvas(1280,720);
+  ui=new UI(width, height);
+  check = new Checking();
 }
 
 function draw() {
-  background(300);
+  background(200);
+  ui.drawBoard();
+
 }
