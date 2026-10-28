@@ -1,7 +1,7 @@
 let winCheck;
 
 function setup() {
-  winCheck = new WinCheck();
+  winCheck = new WinCheck(board);
   createCanvas(400, 400);
 }
 
