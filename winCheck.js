@@ -5,7 +5,8 @@ class WinCheck {
     this.cols = this.board[0].length;
   }
 
-  checkWin() {
+  checkWin(board) {
+    this.board = board;
     // 7x6
     //check horizontal
     for (let r = 0; r < this.rows; r++) {
@@ -18,25 +19,26 @@ class WinCheck {
           return current;
         }
         //check vertical
-        if (r + 3 < this.cols && this.board[r + 1][c] == current && this.board[r + 2][c] == current && this.board[r + 3][c] == current) {
+        if (r + 3 < this.rows && this.board[r + 1][c] == current && this.board[r + 2][c] == current && this.board[r + 3][c] == current) {
           return current;
         }
         // Check diagonal down-right
-        if (r + 3 < this.rows && c + 3 < this.cols && this.board[r + 1][c + 1] === player && this.board[r + 2][c + 2] === player && this.board[r + 3][c + 3] === player) {
+        if (r + 3 < this.rows && c + 3 < this.cols && this.board[r + 1][c + 1] === current && this.board[r + 2][c + 2] === current && this.board[r + 3][c + 3] === current) {
           return current;
         }
 
         // Check diagonal down-left
-        if (r + 3 < this.rows && c - 3 >= 0 && this.board[r + 1][c - 1] === player && this.board[r + 2][c - 2] === player && this.board[r + 3][c - 3] === player) {
+        if (r + 3 < this.rows && c - 3 >= 0 && this.board[r + 1][c - 1] === current && this.board[r + 2][c - 2] === current && this.board[r + 3][c - 3] === current) {
           return current;
         }
       }
     }
+    return 0;
   }
 
-  checkDraw() {
+  checkDraw(board) {
+    this.board = board;
     //check horizontal
-    this.draw;
     for (let i = 0; i < this.rows; i++) {
       //check vertical
       for (let j = 0; j < this.cols; j++) {
