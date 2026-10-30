@@ -1,9 +1,10 @@
 class UI{
-    constructor(width, height){
+    constructor(width, height, check){
     this.c=0;
     this.s=100;
     this.xstart=280;
     this.ystart=90;
+    this.check = check;
 
     }
     drawBoard(){
@@ -15,18 +16,23 @@ class UI{
         }
     }
 
-function mousePressed(){
+  }
+    pressOnBoard(board, player){  
+        this.board = board;
+        this.square;      
+        for (let i=0; i<7; i++){
+            if (mouseX>i*this.s+this.xstart && mouseX<this.xstart+this.s+this.s*i){
+                this.square = i;
+                this.check.placeSquare(i, this.board, player);
 
 
-    for (let i=0; i<7; i++){
-        if (mouseX>i*this.s+this.xstart && mouseX<this.xstart+this.s+this.s*i){
-            this.c+=i;
-            console.log(this.c); 
 
-    }
+
+        }
         
             
     }
 }
-  }
+
+
 }
