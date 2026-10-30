@@ -7,6 +7,16 @@ class UI {
     this.check = check;
   }
   drawBoard() {
+    push();
+    if (player == 1){
+        fill(200,0,0);
+        
+    }else{
+        fill(0,0,200);
+    }
+    circle(mouseX,45,this.s*0.8);
+    pop();
+
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 6; j++) {
         rect(this.xstart + this.s * i, this.ystart + this.s * j, this.s, this.s);
@@ -37,4 +47,5 @@ class UI {
     }
     return false;
   }
+
 }
