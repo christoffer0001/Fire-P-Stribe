@@ -7,16 +7,23 @@ let Board = [
   [0, 0, 0, 0, 0, 0, 0],
 ];
 
-let ui, check, winCheck;
+let ui, check;
+
+let player = 1; //1 or 2
 
 function setup() {
   createCanvas(1280, 720);
-  ui = new UI(width, height);
-  check = new Checking();
-  winCheck = new WinCheck(Board);
+  check = new Checking(Board);
+  ui = new UI(check);
 }
 
 function draw() {
   background(200);
   ui.drawBoard();
+}
+
+function mousePressed() {
+  if (ui.pressOnBoard(Board, player)) {
+    player = player == 1 ? 2 : 1;
+  }
 }
