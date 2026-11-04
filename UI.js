@@ -8,25 +8,33 @@ class UI {
   }
   drawBoard() {
     push();
-    if (player == 1){
-        fill(200,0,0);
-    }else{
-        fill(255,255,0);
+    if (player == 1) {
+      fill(200, 0, 0);
+    } else {
+      fill(255, 255, 0);
     }
-    circle(mouseX,45,this.s*0.9);
+    circle(mouseX, 45, this.s * 0.9);
     pop();
 
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 6; j++) {
+        push();
+        fill(0, 0, 200);
+        noStroke();
         rect(this.xstart + this.s * i, this.ystart + this.s * j, this.s, this.s);
 
-        circle((this.s*i)+this.xstart+this.s/2, this.ystart+this.s/2 + (this.s * j), this.s);
+        fill(200);
+        stroke(1);
+
+        circle(this.s * i + this.xstart + this.s / 2, this.ystart + this.s / 2 + this.s * j, this.s);
+        pop();
+
         let value = this.check.board[j][i];
 
         if (value != 0) {
           push();
           if (value == 1) {
-            fill(200,0, 0);
+            fill(200, 0, 0);
           } else {
             fill(255, 255, 0);
           }
@@ -47,5 +55,4 @@ class UI {
     }
     return false;
   }
-
 }
