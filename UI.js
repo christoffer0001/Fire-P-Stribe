@@ -7,11 +7,21 @@ class UI {
     this.check = check;
   }
   drawBoard() {
-    fill(0, 0, 255);
+    push();
+    if (player == 1){
+        fill(200,0,0);
+        
+    }else{
+        fill(0,0,200);
+    }
+    circle(mouseX,45,this.s*0.8);
+    pop();
+
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 6; j++) {
         rect(this.xstart + this.s * i, this.ystart + this.s * j, this.s, this.s);
 
+        circle((this.s*i)+this.xstart+this.s/2, this.ystart+this.s/2 + (this.s * j), this.s);
         let value = this.check.board[j][i];
 
         if (value != 0) {
@@ -22,7 +32,7 @@ class UI {
             fill(255, 255, 0);
           }
 
-          circle(this.xstart + this.s * i + this.s / 2, this.ystart + this.s * j + this.s / 2, this.s * 0.8);
+          circle(this.xstart + this.s * i + this.s / 2, this.ystart + this.s * j + this.s / 2, this.s);
           pop();
         }
       }
@@ -38,4 +48,5 @@ class UI {
     }
     return false;
   }
+
 }
