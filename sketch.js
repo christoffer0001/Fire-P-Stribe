@@ -63,5 +63,6 @@ function restart() {
   check = new Checking(Board);
   ui = new UI(check);
   endTest = new WinCheck(Board);
+  player = 1;
   loop();
 }
