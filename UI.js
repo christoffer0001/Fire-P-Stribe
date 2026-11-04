@@ -10,11 +10,10 @@ class UI {
     push();
     if (player == 1){
         fill(200,0,0);
-        
     }else{
-        fill(0,0,200);
+        fill(255,255,0);
     }
-    circle(mouseX,45,this.s*0.8);
+    circle(mouseX,45,this.s*0.9);
     pop();
 
     for (let i = 0; i < 7; i++) {
@@ -27,7 +26,7 @@ class UI {
         if (value != 0) {
           push();
           if (value == 1) {
-            fill(200, 0, 0);
+            fill(200,0, 0);
           } else {
             fill(255, 255, 0);
           }
