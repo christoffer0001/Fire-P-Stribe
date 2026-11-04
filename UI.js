@@ -21,6 +21,7 @@ class UI {
       for (let j = 0; j < 6; j++) {
         rect(this.xstart + this.s * i, this.ystart + this.s * j, this.s, this.s);
 
+        circle((this.s*i)+this.xstart+this.s/2, this.ystart+this.s/2 + (this.s * j), this.s);
         let value = this.check.board[j][i];
 
         if (value != 0) {
@@ -31,7 +32,7 @@ class UI {
             fill(0, 0, 200);
           }
 
-          circle(this.xstart + this.s * i + this.s / 2, this.ystart + this.s * j + this.s / 2, this.s * 0.8);
+          circle(this.xstart + this.s * i + this.s / 2, this.ystart + this.s * j + this.s / 2, this.s);
           pop();
         }
       }
