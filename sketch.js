@@ -22,14 +22,23 @@ function draw() {
   background(200);
   ui.drawBoard();
   if (endTest.checkWin(Board) == 1) {
-    console.log("Player 1 won");
-    noLoop(); //Stops the program (p1 win) from running.
+    push();
+    textSize(125);
+    fill(0);
+    text("Rød spiller har vundet!", 0, height / 2 + 50);
+    pop();
   } else if (endTest.checkWin(Board) == 2) {
-    console.log("Player 2 won");
-    noLoop(); //Stops the program (p2 win) from running.
+    push();
+    textSize(125);
+    fill(0);
+    text("Gul spiller har vundet!", 0, height / 2 + 50);
+    pop();
   } else if (endTest.checkDraw(Board)) {
-    console.log("Draw");
-    noLoop(); //Stops the program (draw) from running.
+    push();
+    textSize(200);
+    fill(0);
+    text("Uafgjort :(", width / 10, height / 2);
+    pop();
   }
 }
 
@@ -37,4 +46,18 @@ function mousePressed() {
   if (ui.pressOnBoard(Board, player)) {
     player = player == 1 ? 2 : 1;
   }
+}
+
+function restart() {
+  Board = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+  ];
+  check = new Checking(Board);
+  ui = new UI(check);
+  endTest = new WinCheck(Board);
 }
