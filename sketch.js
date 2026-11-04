@@ -23,10 +23,10 @@ function draw() {
   ui.drawBoard();
   if (endTest.checkWin(Board) == 1) {
     console.log("Player 1 won");
-    noLoop(); //Stops the program (draw) from running.
+    noLoop(); //Stops the program (p1 win) from running.
   } else if (endTest.checkWin(Board) == 2) {
     console.log("Player 2 won");
-    noLoop(); //Stops the program (draw) from running.
+    noLoop(); //Stops the program (p2 win) from running.
   } else if (endTest.checkDraw(Board)) {
     console.log("Draw");
     noLoop(); //Stops the program (draw) from running.

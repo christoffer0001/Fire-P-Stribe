@@ -7,6 +7,7 @@ class UI {
     this.check = check;
   }
   drawBoard() {
+    fill(0, 0, 255);
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 6; j++) {
         rect(this.xstart + this.s * i, this.ystart + this.s * j, this.s, this.s);
@@ -18,7 +19,7 @@ class UI {
           if (value == 1) {
             fill(200, 0, 0);
           } else {
-            fill(0, 0, 200);
+            fill(255, 255, 0);
           }
 
           circle(this.xstart + this.s * i + this.s / 2, this.ystart + this.s * j + this.s / 2, this.s * 0.8);
