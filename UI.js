@@ -29,7 +29,7 @@ class UI {
           if (value == 1) {
             fill(200, 0, 0);
           } else {
-            fill(0, 0, 200);
+            fill(255, 255, 0);
           }
 
           circle(this.xstart + this.s * i + this.s / 2, this.ystart + this.s * j + this.s / 2, this.s);
