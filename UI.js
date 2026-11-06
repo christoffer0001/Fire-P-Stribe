@@ -1,6 +1,5 @@
 class UI {
   constructor(check) {
-    this.c = 0;
     this.s = 100;
     this.xstart = 280;
     this.ystart = 90;
