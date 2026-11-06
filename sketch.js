@@ -27,18 +27,21 @@ function draw() {
     fill(0);
     text("Rød spiller har vundet!", 0, height / 2 + 50);
     pop();
+    noLoop();
   } else if (endTest.checkWin(Board) == 2) {
     push();
     textSize(125);
     fill(0);
     text("Gul spiller har vundet!", 0, height / 2 + 50);
     pop();
+    noLoop();
   } else if (endTest.checkDraw(Board)) {
     push();
     textSize(200);
     fill(0);
     text("Uafgjort :(", width / 10, height / 2);
     pop();
+    noLoop();
   }
 }
 
@@ -60,4 +63,6 @@ function restart() {
   check = new Checking(Board);
   ui = new UI(check);
   endTest = new WinCheck(Board);
+  player = 1;
+  loop();
 }
